@@ -6,6 +6,9 @@ Gr8 makes it easy to shadow, shrink, and minimize your jars.
 
 ## Motivation
 
+> [!NOTE]
+> For Gradle plugins, [Gratatouille](https://github.com/GradleUp/gratatouille) is another flexible way to provide classloader isolation. While GR8 is still supported, using Gratatouille is often more flexible and easier to debug.
+
 Gradle has a [very powerful plugin system](https://r8.googlesource.com/r8). Unfortunately, [Gradle handling of classpath/Classloaders](https://dev.to/autonomousapps/build-compile-run-a-crash-course-in-classpaths-f4g) for plugins has some serious limitations. For an example:
 
 * Gradle always [forces its bundled version of the Kotlin stdlib in the classpath](https://github.com/gradle/gradle/issues/16345). This makes it impossible to use Kotlin 1.5 APIs with Gradle 7.1 for an example because Gradle 7.1 uses Kotlin 1.4 (See [compatibility matrix](https://docs.gradle.org/current/userguide/compatibility.html) for other versions).
